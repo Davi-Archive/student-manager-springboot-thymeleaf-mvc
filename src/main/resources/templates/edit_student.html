@@ -30,37 +30,33 @@
 	</nav>
 	<main class="container">
 		<div class="row">
-			<h1>List Students</h1>
-		</div>
+			<div class="col-lg-6 col-md-6 container justify-content-center card">
+				<h1 class="text-center">Update Student</h1>
+				<div class="card-body">
+					<form th:action="@{/students/{id} (id=${student.id})}" th:object="${student}" method="POST">
+						<div class="form-group">
+							<label>Student First Name</label> <input type="text"
+								name="firstName" th:field="*{firstName}" class="form-control"
+								placeholder="Enter Student First Name" />
+						</div>
+						<div class="form-group">
+							<label>Student Last Name</label> <input type="text"
+								name="lastName" class="form-control" th:field="*{lastName}"
+								placeholder="Enter Student Last Name" />
+						</div>
+						<div class="form-group">
+							<label>Student email</label> <input type="text" name="email"
+								th:field="*{email}" class="form-control"
+								placeholder="Enter Student email" />
+						</div>
+						<div class="box-footer">
+							<button type="submit" class="m-6 btn btn-primary">Submit</button>
+						</div>
 
-		<div class="row">
-			<div class="col-lg-3">
-				<a th:href="@{/students/new}" class="btn btn-primary btn-sm mb-3">Add
-					Student</a>
+					</form>
+				</div>
 			</div>
 		</div>
-		<table class="table table-dark table-striped">
-
-			<thead>
-				<tr>
-					<th scope="col">Student First Name</th>
-					<th scope="col">Student Last Name</th>
-					<th scope="col">Student Email</th>
-					<th scope="col">Actions</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="student:${students}">
-					<td th:text="${student.firstName}"></td>
-					<td th:text="${student.lastName}"></td>
-					<td th:text="${student.email}"></td>
-					<td>
-					<a th:href="@{/students/edit/{id}(id=${student.id})}" class="btn btn-primary">Update</a>
-					<a th:href="@{/students/{id}(id=${student.id})}" class="btn btn-danger">Delete</a>
-					</td>
-				</tr>
-			</tbody>
-		</table>
 	</main>
 </body>
 </html>
