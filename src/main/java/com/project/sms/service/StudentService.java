@@ -6,4 +6,8 @@ import com.project.sms.model.Student;
 
 public interface StudentService {
 	List<Student> getAllStudents();
+	
+	Student saveStudent(Student student);
 }
+
+
