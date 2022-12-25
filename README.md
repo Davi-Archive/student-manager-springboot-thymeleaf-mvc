@@ -1,6 +1,6 @@
 # Student Manager
 
-This system made with the Model-View-Controller Architecture, using thymeleaf and Spring boot, and is capable of view, saving, deleting, updating
+This system made with the Model-View-Controller Architecture and is capable of view, saving, deleting, updating
 students, for control.
 
 # This application is Live
